@@ -32,10 +32,6 @@ if test "x$enable_mysqlsgt" = "xyes";then
 	AC_DEFINE(TCPCOPY_MYSQL_SKIP, 1, [Define if --enable-mysqlsgt])
 fi
 
-AC_ARG_ENABLE(mysql, AS_HELP_STRING([--enable-mysql],[run tcpcopy at mysql mode]),,mysql=no)
-if test "x$enable_mysql" = "xyes";then
-	AC_DEFINE(TCPCOPY_MYSQL_NO_SKIP, 1, [Define if --enable-mysql])
-fi
 
 AC_ARG_ENABLE(offline, AS_HELP_STRING([--enable-offline],[run tcpcopy at offline mode]),,offline=no)
 if test "x$enable_offline" = "xyes";then
