@@ -27,11 +27,6 @@ if test "x$enable_debug" = "xyes";then
 	AC_DEFINE(TCPCOPY_DEBUG, 1, [Define if --enable-debug])
 fi
 
-AC_ARG_ENABLE(mysqlsgt, AS_HELP_STRING([--enable-mysqlsgt],[run tcpcopy at mysql skip-grant-tables mode]),,mysqlsgt=no)
-if test "x$enable_mysqlsgt" = "xyes";then
-	AC_DEFINE(TCPCOPY_MYSQL_SKIP, 1, [Define if --enable-mysqlsgt])
-fi
-
 
 AC_ARG_ENABLE(offline, AS_HELP_STRING([--enable-offline],[run tcpcopy at offline mode]),,offline=no)
 if test "x$enable_offline" = "xyes";then
@@ -248,7 +243,7 @@ if test "x$enable_nfqueue" = "xyes";then
     LIBS="$LIBS -lnfnetlink -lnetfilter_queue "
 fi
 
-CFLAGS="-g -Wall -Wunused-function -pedantic -I../communication -I../core -I../event -I../interception -I../mysql -I../tcpcopy -I../util"
+CFLAGS="-g -Wall -Wunused-function -pedantic -I../communication -I../core -I../event -I../interception -I../tcpcopy -I../util"
 
 AM_CONDITIONAL(ADVANCED, [test "x$advanced" = "xtrue"])
 AM_CONDITIONAL(UDPCOPY, [test "x$udp" = "xtrue"])
@@ -259,7 +254,6 @@ Makefile
 src/Makefile
 src/core/Makefile
 src/util/Makefile
-src/mysql/Makefile
 src/interception/Makefile
 src/communication/Makefile
 src/tcpcopy/Makefile
